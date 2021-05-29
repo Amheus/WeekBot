@@ -2,11 +2,6 @@ import discord
 from discord.ext import commands
 from discord.ext.commands import Context
 from discord import Embed
-import time
-import subprocess
-import requests
-import os
-from datetime import datetime
 
 
 class Utilities(commands.Cog):
@@ -31,4 +26,4 @@ class Utilities(commands.Cog):
         Print a link to the source code
         """
         await ctx.send(content='Created by `Joel Adams`\n'
-                               'https://github.com/JoelLucaAdams/RedditBot')
+                               'https://github.com/JoelLucaAdams/WeekBot')

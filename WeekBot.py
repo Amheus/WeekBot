@@ -51,6 +51,7 @@ async def on_ready():
 async def activity_loop():
     """
     Cycles through different bot activities
+    Sends a message each day with a respective YouTube link and then sleeps for 1 day
     """
     await bot.wait_until_ready()
 
