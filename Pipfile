@@ -3,16 +3,11 @@ name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
 
-[dev-packages]
-
-
 [packages]
 discord = "*"
-python-dotenv = "*"
-PyNaCl = "*"
 "discord.py" = "*"
-asyncio = "*"
-requests = "*"
+discord-py-slash-command = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
