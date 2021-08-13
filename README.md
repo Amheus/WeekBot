@@ -39,12 +39,10 @@ CHANNEL_ID=
 
 <h3 id="3.2.1. DISCORD_TOKEN">3.2.1. `DISCORD_TOKEN`</h3>
 This is provided by Discord and can be obtained by:
- <ol>
-  <li>Going to https://discord.com/developers/applications`.</li>
-  <li>Clicking on the bot.  If you have not yet created a bot, then click `New Application` in the top right.</li>
-  <li>Navigate to the `Bot` menu on the left-hand side.</li>
-  <li>Click `Copy` under `Click to Reveal Token` and paste into the `.env` file.  If you haven't created a bot, then press `Add Bot`, then `Yes, do it!`.</li>
-</ol>
+1. Going to https://discord.com/developers/applications`.
+2. Clicking on the bot.  If you have not yet created a bot, then click `New Application` in the top right.
+3. Navigate to the `Bot` menu on the left-hand side.
+4. Click `Copy` under `Click to Reveal Token` and paste into the `.env` file.  If you haven't created a bot, then press `Add Bot`, then `Yes, do it!`.
 
 <h3 id="3.2.2. CHANNEL_ID">3.2.2. `CHANNEL_ID`</h2>
 This is the ID of the channel you want WeekBot to send messages in.
