@@ -21,4 +21,8 @@ def validate_config():
             if len(config.get('parameters', 'time')) != 5:
                 raise ValueError('The time must be of format `HH:MM`!')
 
+        for day in ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
+            if not config.has_option('videos', day):
+                raise ValueError(f'A video link for "{day}" is missing from the `config.ini` file!')
+
     sys.tracebacklimit = None

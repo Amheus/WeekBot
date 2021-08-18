@@ -1,14 +1,24 @@
 [discord]
 # this is the token provided you by discord
-token=
+token =
 
 [parameters]
 # this is the channel you want weekbot to send the message in
-channel-id=
+channel-id =
 # if you want weekbot to send a message at a particular time
 # you can specify that below
 # if you leave this commented out,
 # it will just be on a 24 hour interval from when the bot starts
 # expected format is HH:MM
 # example: 09:00
-;time=09:00
+;time = 09:00
+
+[videos]
+# these settings are so you can specify your own daily videos
+monday = https://www.youtube.com/watch?v=z8bItnmItq4
+tuesday = https://www.youtube.com/watch?v=CY8a4uh_PdI
+wednesday = https://www.youtube.com/watch?v=TGPQGRPAsGs
+thursday = https://www.youtube.com/watch?v=vZ-7GjIFLME
+friday = https://www.youtube.com/watch?v=qFoEBIfVj9M
+saturday = https://www.youtube.com/watch?v=Dzt7OZ2SpOE
+sunday = https://www.youtube.com/watch?v=Zfjk5SeevLM

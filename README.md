@@ -35,11 +35,20 @@ This bot relies on a `config.ini` file being present, a template can be seen bel
 
 ```ini
 [discord]
-token=
+token = 
 
 [parameters]
-channel-id=
-;time=09:00
+channel-id = 
+time = 09:00
+
+[videos]
+monday = https://www.youtube.com/watch?v=z8bItnmItq4
+tuesday = https://www.youtube.com/watch?v=CY8a4uh_PdI
+wednesday = https://www.youtube.com/watch?v=TGPQGRPAsGs
+thursday = https://www.youtube.com/watch?v=vZ-7GjIFLME
+friday = https://www.youtube.com/watch?v=qFoEBIfVj9M
+saturday = https://www.youtube.com/watch?v=Dzt7OZ2SpOE
+sunday = https://www.youtube.com/watch?v=Zfjk5SeevLM
 
 ```
 
