@@ -33,12 +33,13 @@ This will automatically download and install the packages listed in the `require
 <h2 id="3.2. config.ini File">3.2. `config.ini` File</h2>
 This bot relies on a `config.ini` file being present, a template can be seen below:
 
-```
+```ini
 [discord]
 token=
 
 [parameters]
 channel-id=
+;time=09:00
 
 ```
 

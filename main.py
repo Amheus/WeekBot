@@ -23,6 +23,13 @@ async def on_ready():
     print(f'--------------------------------------------------------------------'
           f'\n|  as of {datetime.utcnow()} - {bot.user} is operational  |'
           f'\n--------------------------------------------------------------------')
+
+    with open("config.ini") as file:
+        config = configparser.RawConfigParser(allow_no_value=True)
+        config.read_string(file.read())
+        if config.has_option('parameters', 'time') is True:
+            while f'{datetime.now().hour}:{datetime.now().minute}' != config.get('parameters', 'time'): await sleep(1)
+
     activity_loop.start()
 
 

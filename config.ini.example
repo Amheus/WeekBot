@@ -1,5 +1,14 @@
 [discord]
+# this is the token provided you by discord
 token=
 
 [parameters]
+# this is the channel you want weekbot to send the message in
 channel-id=
+# if you want weekbot to send a message at a particular time
+# you can specify that below
+# if you leave this commented out,
+# it will just be on a 24 hour interval from when the bot starts
+# expected format is HH:MM
+# example: 09:00
+;time=09:00
