@@ -1,14 +1,13 @@
 
-import configparser
-import sys
 from asyncio import sleep
-from time import strftime
-
+import configparser
+from datetime import datetime
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands import DefaultHelpCommand
 from discord_slash import SlashCommand
-from datetime import datetime
+import sys
+
 
 helpCommand = DefaultHelpCommand()
 
