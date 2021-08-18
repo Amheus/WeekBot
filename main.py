@@ -8,6 +8,7 @@ from discord.ext.commands import DefaultHelpCommand
 from discord_slash import SlashCommand
 import sys
 
+from cogs.commands import Commands
 
 helpCommand = DefaultHelpCommand()
 
@@ -71,27 +72,6 @@ async def activity_loop():
     )
 
 
-@slash.slash(name='ping', description='Pings the bot, returns a response time.')
-async def ping_test(ctx): ctx.send(f'response time: `{str(round(ctx.bot.latency * 1000))}`ms', hidden=True)
-
-
-@slash.slash(name='about', description='Returns information on the bot.')
-async def about(ctx):
-    ctx.send(
-        embed=discord.Embed(
-            title=f"WeekBot",
-            description=f"""
-A bot that posts a video for that day once a day, every day.
-
-Created by `Joel Adams` (https://github.com/JoelLucaAdams).
-Further development by `Sam Lewis` (https://github.com/Amheus).
-            """,
-            colour=discord.Colour.blurple()
-        ),
-        hidden=True
-    )
-
-
 def validate_config():
     with open("config.ini") as file:
         config = configparser.RawConfigParser(allow_no_value=True)
@@ -120,6 +100,7 @@ def main():
         config = configparser.RawConfigParser(allow_no_value=True)
         config.read_string(file.read())
 
+        bot.add_cog(Commands(bot))
         bot.run(config.get('discord', 'token'))
 
 
