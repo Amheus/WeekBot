@@ -1,13 +1,13 @@
 
-import os
+import configparser
+from asyncio import sleep
+from time import strftime
+
 import discord
 from discord.ext import commands, tasks
 from discord.ext.commands import DefaultHelpCommand
 from discord_slash import SlashCommand
-from dotenv import load_dotenv
 from datetime import datetime
-
-load_dotenv()
 
 helpCommand = DefaultHelpCommand()
 
@@ -50,7 +50,11 @@ async def activity_loop():
         )
     )
 
-    channel = bot.get_channel(int(os.getenv("CHANNEL_ID")))
+    with open("config.ini") as file:
+        config = configparser.RawConfigParser(allow_no_value=True)
+        config.read_string(file.read())
+
+        channel = bot.get_channel(config.getint('parameters', 'channel-id'))
 
     if channel is None:
         raise Exception("Please invite this bot into a server with a channel that you've specified in the `.env` file.")
@@ -82,11 +86,12 @@ Further development by `Sam Lewis` (https://github.com/Amheus).
 
 
 def main():
-    bot.run(os.getenv("DISCORD_TOKEN"))
+    with open("config.ini") as file:
+        config = configparser.RawConfigParser(allow_no_value=True)
+        config.read_string(file.read())
+
+        bot.run(config.get('discord', 'token'))
 
 
 if __name__ == '__main__':
-    if os.getenv("DISCORD_TOKEN") is None: raise Exception("Please provide a valid `DISCORD_TOKEN` in the `.env` file.")
-    if not os.getenv("CHANNEL_ID").isdigit(): raise TypeError("Please provide a valid `CHANNEL_ID` in the `.env` file.")
-
     main()
