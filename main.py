@@ -30,7 +30,8 @@ async def on_ready():
         config = configparser.RawConfigParser(allow_no_value=True)
         config.read_string(file.read())
         if config.has_option('parameters', 'time') is True:
-            while f'{datetime.now().hour}:{datetime.now().minute}' != config.get('parameters', 'time'): await sleep(1)
+            while datetime.now().strftime('%H:%M') != config.get('parameters', 'time'):
+                await sleep(1)
 
     bot.loop.create_task(activity_loop(bot))
 
